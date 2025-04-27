@@ -1,7 +1,5 @@
 # QS Medi-Cyclone - Quasi-Stationary Mediterranean Cyclones
-==================================================================================
-### Five ways to classify Mediterranean cyclones based on their stationarity.
-==================================================================================
+## Five ways to classify Mediterranean cyclones based on their stationarity.
 
 QS Medi-Cyclone is a pyton script intended to detect the most persistent or stationary cyclone tracks in a dataset. Five metrics are used to define (quasi-) stationarity:
 
