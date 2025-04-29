@@ -12,6 +12,8 @@ QS Medi-Cyclone is a pyton script that allows you to detect the most persistent 
  Each metric is based on either propagation speed or spatial distance and taking into account either the total life cycle of a cyclone (FT, full-track stationarity) or only a part of it (AT, along-track stationarity). Through their variety, the five metrics thus allow different perspectives from which the (quasi-) stationarity of a cyclone can be captured. By setting specific thresholds, the cyclones are further assigned to different stationary classes to be examined for their properties.
 
 ## FURTHER INFO?
+- QS_functions.py
+- 
 
 ## Tutorial
 ### 1 Load your Data
