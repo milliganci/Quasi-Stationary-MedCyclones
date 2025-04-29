@@ -18,12 +18,12 @@ QS Medi-Cyclone is a pyton script that allows you to detect the most persistent 
 ## Tutorial
 ### 1 Load your Data
 
-Use QSsetup.ipynb to upload your data. In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks you focus on will finally be displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone center (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
+Use QS_setup.ipynb to upload your data. In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks you focus on will finally be displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone center (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
 ### 2 Calculate the Stationarity Metrics
 
-Use QSmetrics.ipynb to calculate the stationarity metrics of your data.
+Use QS_metrics.ipynb to calculate the stationarity metrics of your data.
 
 ### 3 
