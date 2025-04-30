@@ -1,7 +1,7 @@
-# QS Medi-Cyclone - Quasi-Stationary Mediterranean Cyclones
+# QS MediCyclone - Quasi-Stationary Mediterranean Cyclones
 ## Five Metrics to Classify Mediterranean Cyclones Based on Their Stationarity
 
-QS Medi-Cyclone is a pyton script that allows you to detect the most persistent or stationary cyclone tracks in a dataset. Five metrics are presented that can be used to define the (quasi-) stationarity of a cyclone:
+QS MediCyclone is a pyton script that allows you to detect the most persistent or stationary cyclone tracks in a dataset. Five metrics are presented that can be used to define the (quasi-) stationarity of a cyclone:
 
 - median speed (FT)
 - total distance (FT)
@@ -9,7 +9,10 @@ QS Medi-Cyclone is a pyton script that allows you to detect the most persistent 
 - radial distance (AT)
 - circle distance (AT)
 
- Each metric is based on either propagation speed or spatial distance and taking into account either the total life cycle of a cyclone (FT, full-track stationarity) or only a part of it (AT, along-track stationarity). Through their variety, the five metrics thus allow different perspectives from which the (quasi-) stationarity of a cyclone can be captured. By setting specific thresholds, the cyclones are further assigned to different stationary classes to be examined for their properties.
+Each metric is based on either propagation speed or spatial distance and taking into account either the total life cycle of a cyclone (FT, full-track stationarity) or only a part of it (AT, along-track stationarity). Through their variety, the five metrics thus allow different perspectives from which the (quasi-) stationarity properties of a cyclone can be captured.
+
+![SketchNEW](https://github.com/user-attachments/assets/1039bd13-10c1-4464-8256-491f993829f6)
+*Figure 1: Sketch of how the stationarity metrics (based on spatial distance) are calculated.*
 
 ## Tutorial
 ### 1 Load your Data
@@ -22,4 +25,6 @@ Use QS_setup.ipynb to upload your data. In line x and x you can define the tempo
 
 Use QS_metrics.ipynb to calculate the stationarity metrics of your data.
 
-### 3 
+### 3 Use the QS Table for your Quasi-Stationarity Analysis
+
+QS_example.ipynb provides you possible ways of how the QS-table can be used as a tool to analyse the stationarity properties of your data.
