@@ -3,11 +3,11 @@
 
 QS MediCyclone is a pyton script that allows you to detect the most persistent or stationary cyclone tracks in a dataset. Five metrics are presented that can be used to define the (quasi-) stationarity of a cyclone:
 
-- median speed (FT)
-- total distance (FT)
-- 12-hours distance (AT)
-- radial distance (AT)
-- circle distance (AT)
+- Median Speed (FT)
+- Total Distance (FT)
+- 12-hours Distance (AT)
+- Radial Distance (AT)
+- Circle Distance (AT)
 
 Each metric is based on either propagation speed or spatial distance and taking into account either the total life cycle of a cyclone (FT, full-track stationarity) or only a part of it (AT, along-track stationarity). Through their variety, the five metrics thus allow different perspectives from which the (quasi-) stationarity properties of a cyclone can be captured.
 
