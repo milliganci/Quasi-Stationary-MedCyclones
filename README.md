@@ -19,7 +19,7 @@ QS MedCyclone contains Python scripts to identify the slowest-moving and/or most
 ## Tutorial
 ### 1 Load your Data
 
-Use QS_setup.ipynb to upload your data. In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks you focus on will finally be displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone centre (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
+Use QS_setup.ipynb to upload the cyclone track composite file of Flaounas et al. (2023). In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks we focus on are displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone centre (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
