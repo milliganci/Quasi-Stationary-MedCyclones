@@ -1,7 +1,7 @@
 # QS MedCyclone - Quasi-Stationary Mediterranean Cyclones
 ## Five Metrics to Classify Mediterranean Cyclones Based on Their Stationarity
 
-QS MedCyclone is a phyton script that allows you to identify the most persistent or stationary cyclone tracks in a dataset. Five metrics are presented that are used to define the (quasi-) stationarity of a cyclone. Each metric is based on either propagation speed or spatial distance and takes into account either the entire life cycle of a cyclone (FT, full-track stationarity) or only a part of it (AT, along-track stationarity). Due to their diversity, the five metrics offer different perspectives from which the (quasi-) stationarity properties of a cyclone can be captured.
+QS MedCyclone contains Python scripts to identify the slowest-moving and/or most transient cyclone tracks in a dataset. It uses five metrics to define cyclone quasi-stationarity: one metric is based on propagation speed, while the other four are based on the distance traveled. These metrics consider either the entire cyclone life cycle (FT, full-track stationarity) or only part of it (AT, along-track stationarity). Together, these diverse metrics provide different perspectives on capturing the quasi-stationary properties of cyclones.
 
 ## The (Quasi-) Stationarity Metrics
 
