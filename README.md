@@ -20,7 +20,7 @@ QS MedCyclone contains Python scripts to identify the slowest-moving and/or most
 ## 1. `QS_setup.ipynb` — Load Dataset and Perform Filtering
 
 Use this notebook to upload the cyclone track composite dataset from **Flaounas et al. (2023)**.  
-You can define the **temporal** and **spatial** extent of your analysis in **lines `x` and `x`**.
+You can define the temporal and spatial extent of your analysis in lines `x` and `x`.
 
 The dataset consists of cyclone tracks represented as a table. Each row corresponds to a single time step of a cyclone, with the following fields:
 - `id`: Cyclone identifier  
@@ -30,8 +30,7 @@ The dataset consists of cyclone tracks represented as a table. Each row correspo
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
-This script outputs an indexed dataset, *`MedCrossers.mat`*, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea.  
-This heuristic filtering helps to exclude unwanted heat lows.
+This script outputs an indexed dataset, *`MedCrossers.mat`*, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea. This heuristic filtering helps to exclude unwanted heat lows.
 
 ---
 
