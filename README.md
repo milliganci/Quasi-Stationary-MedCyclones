@@ -36,7 +36,7 @@ This script outputs an indexed dataset, `MedCrossers.mat`, which includes only t
 
 ## 2. `QS_metrics.ipynb` — Calculate Quasi-Stationarity Metrics
 
-This notebook takes `MedCrossers.mat` as input and computes stationarity metrics for each cyclone.  
+This notebook takes `MedCrossers.mat` as input and computes stationarity metrics across all cyclones.  
 The results are saved in `df_QS.csv`, a CSV file containing key metrics for further analysis.
 
 ---
