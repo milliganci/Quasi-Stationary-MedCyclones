@@ -30,7 +30,7 @@ The dataset consists of cyclone tracks represented as a table. Each row correspo
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
-This script outputs an indexed dataset, **`MedCrossers.mat`**, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea.  
+This script outputs an indexed dataset, *`MedCrossers.mat`*, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea.  
 This heuristic filtering helps to exclude unwanted heat lows.
 
 ---
