@@ -17,19 +17,34 @@ QS MedCyclone contains Python scripts to identify the slowest-moving and/or most
 *Figure 1: Sketch of how the stationarity metrics (based on spatial distance) are calculated.*
 
 ## Tutorial
-### 1 Load dataset and perform filtering
+## 1. `QS_setup.ipynb` — Load Dataset and Perform Filtering
 
-Use QS_setup.ipynb to upload the cyclone track composite file of Flaounas et al. (2023). In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks we focus on are displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone centre (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
+Use this notebook to upload the cyclone track composite dataset from **Flaounas et al. (2023)**.  
+You can define the **temporal** and **spatial** extent of your analysis in **lines `x` and `x`**.
+
+The dataset consists of cyclone tracks represented as a table. Each row corresponds to a single time step of a cyclone, with the following fields:
+- `id`: Cyclone identifier  
+- `year`, `month`, `day`, `time`: Timestamp  
+- `lon`, `lat`: Spatial coordinates  
+- `mslp`: Minimum sea level pressure at the cyclone center (hPa)
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
-This script reads the Flaounas et al. (2023) dataset and outputs an indexed version, 'MedCrossers.mat', identifying cyclone tracks that cross a grid point over the Mediterranean Sea. This heuristic procedure helps filter out unwanted heat lows.
+This script outputs an indexed dataset, **`MedCrossers.mat`**, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea.  
+This heuristic filtering helps to exclude unwanted heat lows.
 
-### 2 Calculate the quasi-stationarity metrics
+---
 
-Use QS_metrics.ipynb to calculate the stationarity metrics for each cyclone.
+## 2. `QS_metrics.ipynb` — Calculate Quasi-Stationarity Metrics
 
-This script reads as input MedCrossers.mat and outputs df_QS.csv
+This notebook takes **`MedCrossers.mat`** as input and computes stationarity metrics for each cyclone.  
+The results are saved in **`df_QS.csv`**, a CSV file containing key metrics for further analysis.
 
-### 3  for further analysis on the quasi-stationarity of Mediterranean cyclones
-QS_example.ipynb provides possible ways of how the df_QS.csv dataset can be used as a tool to analyse the stationarity properties of the data.
+---
+
+## 3. `QS_example.ipynb` — Explore Quasi-Stationarity of Mediterranean Cyclones
+
+This notebook provides examples of how to use **`df_QS.csv`** to analyze the quasi-stationary behavior of Mediterranean cyclones.  
+It includes plotting routines and analysis workflows to support scientific exploration.
+
+---
