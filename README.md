@@ -17,16 +17,19 @@ QS MedCyclone contains Python scripts to identify the slowest-moving and/or most
 *Figure 1: Sketch of how the stationarity metrics (based on spatial distance) are calculated.*
 
 ## Tutorial
-### 1 Load your Data
+### 1 Load Dataset
 
 Use QS_setup.ipynb to upload the cyclone track composite file of Flaounas et al. (2023). In line x and x you can define the temporal and spatial extent of your analysis. The set of cyclone tracks we focus on are displayed as a table. Each track point (row index) of a cyclone (id) represents the minimum pressure at the cyclone centre (hPa) at a specific step in time (year, month, day, time) and space (lon, lat).
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
-### 2 Calculate the Quasi-Stationarity Metrics
+This script reads the Flaounas et al. (2023) dataset and outputs an indexed version, 'MedCrossers.mat', identifying cyclone tracks that cross a grid point over the Mediterranean Sea. This heuristic procedure helps filter out unwanted heat lows.
+
+### 2 Calculate the quasi-stationarity Metrics
 
 Use QS_metrics.ipynb to calculate the stationarity metrics for each cyclone.
 
-### 3 Use the QS Table for your Quasi-Stationarity Analysis
+This script reads as input MedCrossers.mat and outputs df_QS.csv
 
-QS_example.ipynb provides you possible ways of how the QS-table can be used as a tool to analyse the stationarity properties of the data.
+### 3 Use the QS Table for further analysis on the quasi-stationarity of Mediterranean Cyclones
+QS_example.ipynb provides possible ways of how the df_QS.csv dataset can be used as a tool to analyse the stationarity properties of the data.
