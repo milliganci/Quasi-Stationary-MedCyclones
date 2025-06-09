@@ -32,8 +32,8 @@ You can define the temporal and spatial extent of your analysis in lines `x` and
 
 The dataset consists of cyclone tracks represented as a table. Each row corresponds to a single time step of a cyclone, with the following fields:
 - `id`: Cyclone identifier  
+- `lon`, `lat`: Spatial coordinates
 - `year`, `month`, `day`, `time`: Timestamp  
-- `lon`, `lat`: Spatial coordinates  
 - `mslp`: Minimum sea level pressure at the cyclone center (hPa)
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
