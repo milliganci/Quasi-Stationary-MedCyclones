@@ -25,7 +25,7 @@ QS MedCyclone contains Python scripts to identify the slowest-moving and/or most
 ---
 
 ## Tutorial
-### 1. `01_QS_setup.ipynb` — Load Dataset and Perform Filtering
+### 01. `QS_setup.ipynb` — Load Dataset and Perform Filtering
 
 Use this notebook to upload the cyclone track composite dataset from **Flaounas et al. (2023)**.  
 You can define the temporal and spatial extent of your analysis in lines `x` and `x`.
@@ -41,13 +41,13 @@ The dataset consists of cyclone tracks represented as a table. Each row correspo
 This script outputs an indexed dataset, `MedCrossers.mat`, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea. This heuristic filtering helps to exclude unwanted heat lows.
 
 
-### 2. `02_QS_metrics.ipynb` — Calculate Quasi-Stationarity Metrics
+### 02. `QS_metrics.ipynb` — Calculate Quasi-Stationarity Metrics
 
 This notebook takes `MedCrossers.mat` as input and computes stationarity metrics across all cyclones.  
 The results are saved in `df_QS.csv`, a CSV file containing key metrics for further analysis.
 
 
-### 3. `03_QS_example.ipynb` — Explore Quasi-Stationarity of Mediterranean Cyclones
+### 03. `QS_example.ipynb` — Explore Quasi-Stationarity of Mediterranean Cyclones
 
 This notebook provides examples of how to use `df_QS.csv` to analyse the quasi-stationary behavior of Mediterranean cyclones.  
 It includes plotting routines and analysis workflows to support scientific exploration.
