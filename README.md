@@ -34,7 +34,7 @@ The dataset consists of cyclone tracks represented as a table. Each row correspo
 - `id`: Cyclone identifier  
 - `lon`, `lat`: Spatial coordinates
 - `year`, `month`, `day`, `time`: Timestamp  
-- `mslp`: Minimum sea level pressure at the cyclone center (hPa)
+- `hPa`: Minimum sea level pressure at the cyclone center (in hectopascal units)
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
