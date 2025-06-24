@@ -106,6 +106,26 @@ def timerange_datetime(t_start, t_end, t_int, t_res, list_mon):
     return var_time
 
 
+## HAVERSINE formula to compute distance (in km) between lon, lat points (vectors)
+    
+def haversine(lon1, lat1, lon2, lat2):
+   # convert decimal degrees to radians
+   lon1 = np.deg2rad(lon1)
+   lon2 = np.deg2rad(lon2)
+   lat1 = np.deg2rad(lat1)
+   lat2 = np.deg2rad(lat2)
+
+
+   # haversine formula
+   dlon = lon2 - lon1
+   dlat = lat2 - lat1
+   a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
+   c = 2 * np.arcsin(np.sqrt(a))
+   r = 6371
+    
+   return c * r
+
+
 ## FIND_NEAREST_INDEX: Formula
 def find_nearest_index(lon_ref, lat_ref, lon_input, lat_input):
     xi = np.nanargmin((lon_ref-lon_input)**2)
