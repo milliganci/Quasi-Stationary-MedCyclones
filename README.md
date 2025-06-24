@@ -1,7 +1,7 @@
-# QS MedCyclone - Quasi-Stationary Mediterranean Cyclones
+# QS MedCyclones - Quasi-Stationary Mediterranean Cyclones
 ## Five Metrics to Classify Mediterranean Cyclones Based on Their Stationarity
 
-QS MedCyclone contains Python scripts to identify the slowest-moving and/or most transient cyclone tracks in a dataset. It uses five metrics to define cyclone quasi-stationarity: one metric is based on propagation speed, while the other four are based on the distance traveled. These metrics consider either the entire cyclone life cycle (FT, full-track stationarity) or only part of it (AT, along-track stationarity). Together, these diverse metrics provide different perspectives on capturing the quasi-stationary properties of cyclones.
+QS MedCyclones contains Python scripts to identify the slowest-moving and/or most transient cyclone tracks in a dataset. It uses five metrics to define cyclone quasi-stationarity: one metric is based on propagation speed, while the other four are based on the distance traveled. These metrics consider either the entire cyclone life cycle (FT, full-track stationarity) or only part of it (AT, along-track stationarity). Together, these diverse metrics provide different perspectives on capturing the quasi-stationary properties of cyclones.
 
 ---
 
