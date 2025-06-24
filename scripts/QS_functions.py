@@ -9,6 +9,7 @@ import calendar
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import matplotlib.ticker as mticker
+from scipy.stats import rankdata
 
 ## TRACK SELECTION
 
@@ -127,7 +128,73 @@ def haversine(lon1, lat1, lon2, lat2):
 
 
 ## FIND_NEAREST_INDEX: Formula
+
 def find_nearest_index(lon_ref, lat_ref, lon_input, lat_input):
     xi = np.nanargmin((lon_ref-lon_input)**2)
     yi  = np.nanargmin((lat_ref-lat_input)**2)
     return (xi, yi)
+
+
+## ASSIGN QUANTILES to Full-Track (FT) and Along-Track (AT) stationarity definitions
+
+def assign_quantiles_and_categories_FT(values, df_original, name):
+    # compute quantile ranks (0 to 1)
+    ranks = rankdata(values, method='ordinal')
+    quantiles = np.round((ranks - 1) / (len(values) - 1), 3)
+
+    # assign categories: 0 = unclassified, 1 = low, 2 = medium, 3 = high
+    # quantiles can be changed to suit needs of user
+    categories = np.zeros_like(quantiles)
+    categories[quantiles <= 0.10] = 1
+    categories[(quantiles >= 0.45) & (quantiles <= 0.55)] = 2
+    categories[quantiles >= 0.90] = 3
+    categories[np.isnan(values)] = np.nan
+
+    return pd.DataFrame({
+        'id': df_original['id'].unique()[:len(values)],  # match IDs
+        f'{name}_v': np.round(values, 3),
+        f'{name}_q': quantiles,
+        f'{name}_c': categories
+    })
+
+
+def categorise_distances_AT(df_dist, df_original, tstep_window, prefix):
+    # categorisation function, reusable for any dist DataFrame with ['id', 'lon', 'lat', 'dist_sum']
+    # calculate percentiles (user may change these thresholds according to preference)
+    all_dist = df_dist['dist_sum'].values
+    perc_90 = np.percentile(all_dist, 90)
+    perc_45 = np.percentile(all_dist, 45)
+    perc_55 = np.percentile(all_dist, 55)
+    perc_10 = np.percentile(all_dist, 10)
+
+    # full values per ID with padding NaNs for trailing points
+    full_values = []
+    for ID_unique in np.unique(df_original.id.values):
+        vals = np.array([v for v in df_dist.loc[df_dist['id'] == ID_unique, 'dist_sum']])
+        vals = np.round(vals, 3)
+        vals_padded = np.append(vals, [np.nan]*tstep_window)  # pad for alignment
+        full_values.append(vals_padded)
+    full_values_concat = np.concatenate(full_values)
+
+    # calculate quantile ranks
+    ranks = rankdata(full_values_concat, method='ordinal', nan_policy='omit')
+    quantiles = np.where(np.isnan(full_values_concat), np.nan, (ranks - 1) / (len(full_values_concat[~np.isnan(full_values_concat)]) - 1))
+    quantiles = np.round(quantiles, 3)
+
+    # categorise based on quantiles
+    categories = np.zeros_like(quantiles)
+    categories[quantiles <= 0.1] = 1
+    categories[(quantiles >= 0.45) & (quantiles <= 0.55)] = 2
+    categories[quantiles >= 0.9] = 3
+    categories[np.isnan(quantiles)] = np.nan
+
+    # create DataFrame to join back to 'original' df_Medcrossers
+    new_cols = pd.DataFrame({
+        f'{prefix}_v': full_values_concat,
+        f'{prefix}_q': quantiles,
+        f'{prefix}_c': categories    
+    })
+    new_cols.index = df_original.index  # align index
+
+    # return categorised dataframe and the three tracks filtered by percentile groups
+    return new_cols
