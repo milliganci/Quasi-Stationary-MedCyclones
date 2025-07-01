@@ -19,11 +19,11 @@ QS MedCyclones contains Python scripts to identify the slowest-moving and/or mos
 ---
 
 ## More information
-The code and results provided in this repository are based on work from my MSc thesis at the University of XXX, supervised by Prof. YYY, entitled [_Quasi-Stationary Mediterranean Cyclones_](https://your-link-to-pdf).
+The code and results provided in this repository are based on work from my MSc thesis at the University of XXX, supervised by Prof. YYY, entitled [_Quasi-Stationary Mediterranean Cyclones_](https://github.com/milliganci/Quasi-Stationary-MediCyclones/blob/main/docs/MSc_Thesis_Unibe_MGanci.pdf).
 
 If you use any part of this project, please cite it in your publication as:
 
-Ganci, M. (2025). _Title_. GitHub. [DOI to follow soon].
+Ganci, M. (2025). Quasi-Stationary MedCyclones. GitHub. [DOI to follow soon].
 
 ---
 
