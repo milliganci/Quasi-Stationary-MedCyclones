@@ -19,8 +19,11 @@ QS MedCyclones contains Python scripts to identify the slowest-moving and/or mos
 ---
 
 ## More information
-...work based on MSc Thesis at University of Bern
-...how to cite this repository if use this code in your research: xyz
+The code and results provided in this repository are based on work from my MSc thesis at the University of XXX, supervised by Prof. YYY, entitled [_Quasi-Stationary Mediterranean Cyclones_](https://your-link-to-pdf).
+
+If you use any part of this project, please cite it in your publication as:
+
+Ganci, M. (2025). _Title_. GitHub. [DOI to follow soon].
 
 ---
 
