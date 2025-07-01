@@ -23,15 +23,14 @@ The code and results provided in this repository are based on work from my MSc t
 
 If you use any part of this project, please cite it in your publication as:
 
-Ganci, M. (2025). Quasi-Stationary MedCyclones. GitHub. [DOI to follow soon].
+- Ganci, M. (2025). Quasi-Stationary MedCyclones. GitHub. [DOI to follow soon].
 
 ---
 
 ## Tutorial
 ### 01. `QS_setup.ipynb` — Load Dataset and Perform Filtering
 
-Use this notebook to upload the cyclone track composite dataset from **Flaounas et al. (2023)**.  
-You can define the temporal and spatial extent of your analysis in lines `x` and `x`.
+Use this notebook to upload the cyclone track composite dataset from **Flaounas et al. (2023)**.
 
 The dataset consists of cyclone tracks represented as a table. Each row corresponds to a single time step of a cyclone, with the following fields:
 - `id`: Cyclone identifier  
@@ -41,17 +40,17 @@ The dataset consists of cyclone tracks represented as a table. Each row correspo
 
 ![image](https://github.com/user-attachments/assets/f3755185-2042-4e69-9580-8cfe96d092c4)
 
-This script outputs an indexed dataset, `MedCrossers.mat`, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea. This heuristic filtering helps to exclude unwanted heat lows.
+This script outputs an indexed dataset, `TRACKS_CL5_onlyMedcrossers.csv`, which includes only those cyclone tracks that intersect grid points over the Mediterranean Sea. This heuristic filtering helps to exclude unwanted heat lows.
 
 
 ### 02. `QS_metrics.ipynb` — Calculate Quasi-Stationarity Metrics
 
-This notebook takes `MedCrossers.mat` as input and computes stationarity metrics across all cyclones.  
-The results are saved in `df_QS.csv`, a CSV file containing key metrics for further analysis.
+This notebook takes `TRACKS_CL5_onlyMedcrossers.csv` as input and computes stationarity metrics across all cyclones.  
+The results are saved in `TRACKS_CL5_QS_Medcrossers.csv`, a CSV file containing key metrics for further analysis.
 
 
 ### 03. `QS_example.ipynb` — Explore Quasi-Stationarity of Mediterranean Cyclones
 
-This notebook provides examples of how to use `df_QS.csv` to analyse the quasi-stationary behavior of Mediterranean cyclones.  
-It includes plotting routines and analysis workflows to support scientific exploration.
+This notebook provides examples of how to use `TRACKS_CL5_QS_Medcrossers.csv` to visualise the quasi-stationary behaviour of Mediterranean cyclones.  
+It includes plotting routines and some analysis workflows to support scientific exploration.
 
