@@ -23,7 +23,7 @@ The code and results provided in this repository are based on work from my MSc t
 
 If you use any part of this project, please cite it in your publication as:
 
-- Ganci, M. B., Pappert, D., and Portal, A. (2025). Quasi-Stationary MedCyclones. GitHub. 10.5281/zenodo.17097025.
+- Ganci, M. B., Pappert, D., and Portal, A. (2025). Quasi-Stationary MedCyclones. GitHub. [10.5281/zenodo.17097025](https://doi.org/10.5281/zenodo.17097025).
 
 ---
 
