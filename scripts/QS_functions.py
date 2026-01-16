@@ -63,6 +63,70 @@ def get_storms_sometime(df_tracks, id_storm, var_time):
     return df_select
 
 
+## VARIABLE SELECTION
+
+def open_var(var_name, var_time, fname_prev, ds_prev):
+    """Returns the xarray dataset of the selected variable, within which the selected time is available.
+    If fn_prev is empty or different from the output of generate_fname, reopens a dataset.
+
+    Parameters:
+    var_name: name of the variable.
+    var_time: datetime.datetime object.
+    fname_prev: name of the previous dataset file opened.
+    ds_prev: previous dataset file opened.
+
+
+    Returns:
+    ds_var: xarray dataset.
+    fname_var: name of the data file (string).
+
+    """
+    fname_var = generate_fname(var_name, var_time)
+    if fname_var != fname_prev:
+        ds_var = xr.open_dataset(fname_var)
+    else:
+        ds_var = ds_prev
+    # return the xarray dataset and the path to the associated file
+    return ds_var, fname_var
+
+def generate_fname(var_name, var_time):
+    """Creates a string with the path to the file of the variable requested at the time requested.
+
+    Parameters:
+    var_name: name of the variable.
+    var_time: datetime.datetime object.
+
+    Returns:
+    fname: name of the file (string).
+
+    """
+    # Set type var_time
+    if type(var_time) != datetime.datetime:
+        var_time = var_time.astype(datetime.datetime)
+
+    # Define directory
+    data_dir = "/media/alice/Crucial X9/portal/data_UNIBE/Bern_data/"
+    if var_name == "precip":
+        prefix_var = data_dir + "data/precip/precip"
+        file_date = var_time.strftime("%Y")
+        fname = prefix_var + file_date + ".nc"
+    elif (var_name == "precip_6h") or (var_name == "convprecip_6h"):
+        prefix_var = data_dir + "processed_data/precip/"+var_name[:-3]
+        file_date = var_time.strftime("%Y")
+        fname = prefix_var + file_date + var_name[-3:] + ".nc"
+    elif (var_name == "precip_24h"):
+        prefix_var = data_dir + "processed_data/precip/"+var_name[:-4]
+        file_date = var_time.strftime("%Y")
+        fname = prefix_var + file_date + var_name[-4:] + ".nc"
+    elif var_name == "convprecip_6h_extr":
+        prefix_var = data_dir + "processed_data/precip/"+var_name[:-8]
+        file_date = var_time.strftime("%Y")
+        fname = prefix_var + file_date + "_6h_tpextr_cp08.nc"
+    else:
+        print("Variable name is not known")
+    return fname
+
+
 ## TIME FUNCTIONS
 
 def make_var_time(df_select):
